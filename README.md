@@ -6,13 +6,12 @@ Identificar os subdomínios do projeto, classificá-los (Core, Supporting, Gener
 ---
 
 ## 1. Nome do Projeto
-**[Escreva o nome do sistema ou aplicação que está sendo modelado]**
+Life Sync
 
 ---
 
 ## 2. Objetivo Principal do Projeto
-**[Explique o propósito do sistema em uma ou duas frases]**  
-*Exemplo:* Facilitar o agendamento de consultas médicas online entre pacientes e médicos.
+Criar uma solução digital gamificada que incentive o autocuidado físico e mental de colaboradores por meio de missões mensais, recompensas e um ranking saudável, promovendo engajamento e bem-estar de forma leve e participativa.
 
 ---
 
@@ -21,9 +20,9 @@ Liste os subdomínios do sistema e classifique-os como **Core Domain**, **Suppor
 
 | **Subdomínio**              | **Descrição**                                                                                      | **Tipo**         |
 |-----------------------------|--------------------------------------------------------------------------------------------------|------------------|
-| Ex.: Gestão de Consultas    | Gerencia o agendamento, consulta por vídeo e emissão de atestados e receitas.                   | Core Domain      |
-| Ex.: Cadastro de Usuários   | Gerencia o login, cadastro e permissões dos médicos e pacientes.                                | Supporting       |
-| Ex.: Pagamentos             | Processa pagamentos e repassa valores para médicos.                                             | Generic          |
+| Engajamento e Gamificação   | Gerencia a personalização de desafios, o progresso e a gamificação para motivar e reter os colaboradores.                                | Core Domain      |
+| Gestão de Contas            | Responsável pelo ciclo de vida das contas corporativas e dos perfis dos colaboradores.                                                   | Supporting       |
+| Autenticação e Autorização  | Gerencia o login, a segurança de senhas e os níveis de permissão dos diferentes tipos de usuários (Colaborador, Gestor de Bem-Estar).    | Generic          |
 
 ---
 
@@ -32,8 +31,9 @@ Liste e descreva os bounded contexts identificados no projeto. Explique a respon
 
 | **Bounded Context**           | **Responsabilidade**                                                                                 | **Subdomínios Relacionados** |
 |-------------------------------|-----------------------------------------------------------------------------------------------------|-----------------------------|
-| Ex.: Contexto de Consultas    | Gerencia as consultas médicas, do agendamento à finalização, incluindo emissão de receitas.         | Gestão de Consultas         |
-| Ex.: Contexto de Pagamentos   | Processa cobranças de consultas e repasses para médicos ou clínicas.                              | Pagamentos                  |
+| Contexto de Bem-Estar   | Orquestra a experiência do colaborador com as micro-intervenções, coleta feedback e processa todos os dados para gerar as análises de engajamento e impacto no Dashboard.    | Gestão de Intervenções e Análise de Impacto  |
+| Contexto de Contas      | Responsável pelo ciclo de vida das contas corporativas e dos perfis dos colaboradores.      | Pagamentos                  |
+| Contexto de Identidade  | Focado exclusivamente em validar as credenciais do usuário e emitir tokens de acesso. Delega a complexidade da segurança de login para um serviço especializado. | Autenticação e Autorização
 
 ---
 
@@ -44,8 +44,10 @@ Explique como os bounded contexts vão se comunicar. Use os padrões de comunica
 
 | **De (Origem)**              | **Para (Destino)**          | **Forma de Comunicação**    | **Exemplo de Evento/Chamada**                  |
 |------------------------------|-----------------------------|-----------------------------|-----------------------------------------------|
-| Contexto de Consultas        | Contexto de Pagamentos      | Mensageria (Evento)         | "Consulta Finalizada"                         |
-| Contexto de Cadastro          | Contexto de Consultas      | API                         | Obter informações de um Paciente pelo ID      |
+| Contexto de Identidade e Acesso  | Contexto de Jornada do Colaborador    | Cadastro realizado.         | Usuário recebe acesso à plataforma.     |
+| Contexto de Conteúdo        | Contexto de Jornada do Colaborador      | Conteúdo disponível para os usuarios.                         |Usuário assiste um conteúdo sobre saude e responde um quizz.     |
+| Contexto de Jornada do Colaborador       | Contexto de Comunidade  | Conquista é publicada no feed | Usuário completa desafios e compartilha com a rede de amigos.
+| Contexto de Jornada do Colaborador       | Contexto de Análise Corporativa | Gerado dashboards. | Empresa recebe dashboards e dados sobre os resultados dos colaboradores.
 
 ---
 

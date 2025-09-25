@@ -21,7 +21,7 @@ Liste os subdomínios do sistema e classifique-os como **Core Domain**, **Suppor
 | **Subdomínio**              | **Descrição**                                                                                      | **Tipo**         |
 |-----------------------------|--------------------------------------------------------------------------------------------------|------------------|
 | Engajamento e Gamificação   | Gerencia a personalização de desafios, o progresso e a gamificação para motivar e reter os colaboradores.                                | Core Domain      |
-| Gestão de Contas            | Responsável pelo ciclo de vida das contas corporativas e dos perfis dos colaboradores.                                                   | Supporting       |
+| Comunidade            | Responsável pelo ciclo de vida das contas corporativas e dos perfis dos colaboradores.                                                   | Supporting       |
 | Autenticação e Autorização  | Gerencia o login, a segurança de senhas e os níveis de permissão dos diferentes tipos de usuários (Colaborador, Gestor de Bem-Estar).    | Generic          |
 
 ---
